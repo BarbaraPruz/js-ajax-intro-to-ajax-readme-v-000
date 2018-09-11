@@ -1,12 +1,13 @@
 function showRepositories() {
   //this is set to the XMLHttpRequest object that fired the event
   console.log(this.responseText);
+  let repoList = '<ul>';
+  for (var i = 0; i < this.responseText.length; i++) {
+    repoList += '<li>' + this.responseText[i]['name'] + '</li>';
+  }
+  repoList += '</ul>';
+  document.getElementById('repositories').innerHTML = repoList;
 }
-<<<<<<< HEAD
-
-=======
- 
->>>>>>> 12f8274ca24c7f4fd08733615ef63d1cc2a3fdc7
 
 function getRepositories() {
   const req = new XMLHttpRequest();
